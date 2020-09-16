@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
     "fsevents": "^2.1.3",
-    "nodemon": "^2.0.4",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
     "pg": "^8.3.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./bin/www",
+    "db:reset": "psql -U labber -d movies < ./db/schema.sql && psql -U labber -d movies < ./db/seeds.sql"
   },
   "keywords": [],
   "author": "",
