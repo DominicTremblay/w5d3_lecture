@@ -8,6 +8,7 @@ const {
   getActors,
   getActorById,
   getActorsByMovie,
+  addNewActor,
 } = require('./helpers/dbHelpers')(db);
 
 const indexRouter = require('./routes/index');

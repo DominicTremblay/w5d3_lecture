@@ -48,7 +48,12 @@ module.exports = (db) => {
       values: [first_name, last_name, bio, dob],
     };
 
+<<<<<<< HEAD
     return query(query)
+=======
+    return db
+      .query(query)
+>>>>>>> demo-east-aug17-2020
       .then((result) => result.rows[0])
       .catch((err) => err.message);
   };
