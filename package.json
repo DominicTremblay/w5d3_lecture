@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-    "db:reset": "psql -U labber -d movies < ./db/schema.sql && psql -U labber -d movies < ./db/seeds.sql"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,7 +13,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pg": "^8.3.3"
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
