@@ -1,10 +1,12 @@
-const { Pool } = require('pg')
+require('dotenv').config();
+
+const { Pool } = require('pg');
 const pool = new Pool({
-  user: 'labber',
-  host: 'localhost',
-  database: 'movies',
-  password: 'labber',
-  port: 5433,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
 });
 
 console.log(`Connecting to movies datbase`);
