@@ -5,7 +5,6 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "db:reset": "psql -U labber -d movies < ./db/schema.sql && psql -U labber -d movies < ./db/seeds.sql"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
