@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS casting CASCADE;
+DROP TABLE IF EXISTS movies CASCADE;
+DROP TABLE IF EXISTS actors CASCADE;
+
+CREATE TABLE movies(
+  id SERIAL PRIMARY KEY NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  released_date DATE,
+  runtime_in_minutes INTEGER
+);
+
+CREATE TABLE actors(
+  id SERIAL PRIMARY KEY NOT NULL,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  bio TEXT,
+  dob DATE
+);
+
+CREATE TABLE casting(
+  id SERIAL PRIMARY KEY NOT NULL,
+  movie_id INTEGER REFERENCES movies(id) ON DELETE CASCADE,
+  actor_id INTEGER REFERENCES actors(id) ON DELETE CASCADE
+);
