@@ -6,6 +6,15 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const actorsRouter = require('./routes/actors');
+
+// importing the database connection => pool connection
+const db = require('./db');
+
+const dbHelpers = require('./helpers/dbHelpers')(db)
+
+console.log(dbHelpers);
+
 
 const app = express();
 
@@ -20,7 +29,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+// using the usersRouter here
 app.use('/users', usersRouter);
+// using the actorsRouter here
+app.use('/actors', actorsRouter(dbHelpers));
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
